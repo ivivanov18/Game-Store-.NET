@@ -1,0 +1,29 @@
+GET http://localhost:5073/games
+
+###
+GET http://localhost:5073/games/1ea3635a-58f1-4b02-a5e1-82a459d4a57a
+
+###
+POST http://localhost:5073/games
+Content-Type: application/json
+
+{
+	"name": "Left 4 Dead",
+	"genre": "Horror shooter",
+	"price": "5.99",
+	"releaseDate": "2008-11-18"
+}
+
+###
+PUT http://localhost:5073/games/1ea3635a-58f1-4b02-a5e1-82a459d4a57a
+Content-Type: application/json
+
+{
+	"name": "Street Fighter II Turbo",
+	"genre" : "Fighting",
+	"price" : "19.99",
+	"releaseDate" : "1992-07-15"
+}
+
+###
+DELETE http://localhost:5073/games/807dba55-13c5-42a1-8fc4-44a21c15e3b5
