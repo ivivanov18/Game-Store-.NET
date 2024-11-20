@@ -107,6 +107,8 @@ app.MapDelete("/games/{id}", (Guid id) =>
 	return Results.NoContent();
 });
 
+app.MapGet("/genres", () => genres.Select(genre => new GenreDto(genre.Id, genre.Name)));
+
 app.Run();
 
 public record GameDetailDto(
@@ -124,4 +126,9 @@ public record GameSummaryDto(
 	string Genre,
 	decimal Price,
 	DateOnly ReleaseDate
+);
+
+public record GenreDto(
+	Guid Id,
+	string Name
 );
