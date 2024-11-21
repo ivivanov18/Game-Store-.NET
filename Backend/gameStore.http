@@ -9,9 +9,10 @@ Content-Type: application/json
 
 {
 	"name": "Left 4 Dead",
-	"genre": "Horror shooter",
+	"genreId": "f4d9a6a8-2a73-4f13-9e01-e52567507b00",
 	"price": "5.99",
-	"releaseDate": "2008-11-18"
+	"releaseDate": "2008-11-18",
+	"description": "Great shooter"
 }
 
 ###
@@ -27,3 +28,6 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:5073/games/807dba55-13c5-42a1-8fc4-44a21c15e3b5
+
+###
+GET http://localhost:5073/genres
