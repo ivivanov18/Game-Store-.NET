@@ -1,5 +1,5 @@
-using System.ComponentModel.DataAnnotations;
 using GameStore.Api.Data;
+using GameStore.Api.Features.Games;
 using GameStore.Api.Features.Games.CreateGame;
 using GameStore.Api.Features.Games.DeleteGame;
 using GameStore.Api.Features.Games.GetGame;
@@ -12,11 +12,6 @@ var app = builder.Build();
 
 GameStoreData data = new();
 
-app.MagGetGames(data);
-app.MapGetGame(data);
-app.MapCreateGame(data);
-app.MapUpdateGame(data);
-app.MapDeleteGame(data);
-app.MapGetGenres(data);
-
+app.MapGames(data);
+app.MapGenres(data);
 app.Run();
