@@ -16,14 +16,15 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:5073/games/1ea3635a-58f1-4b02-a5e1-82a459d4a57a
+PUT http://localhost:5073/games/a893498d-2c71-40c9-81ce-37e3934499f6
 Content-Type: application/json
 
 {
 	"name": "Street Fighter II Turbo",
-	"genre" : "Fighting",
+	"genreId" : "dd243b4a-71dc-4a0b-b11d-d67a55a8586d",
 	"price" : "19.99",
-	"releaseDate" : "1992-07-15"
+	"releaseDate" : "1992-07-15",
+	"description": "Still one of the best on SNES"
 }
 
 ###
