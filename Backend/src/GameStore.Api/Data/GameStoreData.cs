@@ -22,7 +22,7 @@ public class GameStoreData
 		[
 			new Game
 			{
-				Id = new Guid("a893498d-2c71-40c9-81ce-37e3934499f6"),
+				Id = Guid.NewGuid(),
 				Name = "Street Figher II",
 				Genre = genres[0],
 				Price = 19.99m,
@@ -31,7 +31,7 @@ public class GameStoreData
 			},
 				new Game
 			{
-				Id = new Guid("5f63d854-6ab3-48ec-97f5-13e414aba63e"),
+				Id = Guid.NewGuid(),
 				Name = "Final Fantasy VII",
 				Genre = genres[3],
 				Price = 59.99m,
@@ -40,7 +40,7 @@ public class GameStoreData
 			},
 				new Game
 			{
-				Id = new Guid("c33f8bd1-8f59-47d6-9c66-3bdf119b46ad"),
+				Id = Guid.NewGuid(),
 				Name = "Little Big Adventure 2",
 				Genre = genres[1],
 				Price = 29.99m,
