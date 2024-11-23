@@ -8,10 +8,12 @@ using GameStore.Api.Features.Games.UpdateGame;
 using GameStore.Api.Features.Genres;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// REGISTER SERVICES
+builder.Services.AddTransient<GameStoreData>();
+
 var app = builder.Build();
 
-GameStoreData data = new();
-
-app.MapGames(data);
-app.MapGenres(data);
+app.MapGames();
+app.MapGenres();
 app.Run();
