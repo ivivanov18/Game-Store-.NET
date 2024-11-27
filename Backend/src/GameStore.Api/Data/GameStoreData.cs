@@ -25,6 +25,7 @@ public class GameStoreData
 				Id = Guid.NewGuid(),
 				Name = "Street Figher II",
 				Genre = genres[0],
+				GenreId = genres[0].Id,
 				Price = 19.99m,
 				ReleaseDate = new DateOnly(1992,7, 15),
 				Description = "First ever worldwide fighting game"
@@ -34,6 +35,7 @@ public class GameStoreData
 				Id = Guid.NewGuid(),
 				Name = "Final Fantasy VII",
 				Genre = genres[3],
+				GenreId = genres[0].Id,
 				Price = 59.99m,
 				ReleaseDate = new DateOnly(2010,9, 30),
 				Description = "Classic in the genre"
@@ -43,6 +45,7 @@ public class GameStoreData
 				Id = Guid.NewGuid(),
 				Name = "Little Big Adventure 2",
 				Genre = genres[1],
+				GenreId = genres[0].Id,
 				Price = 29.99m,
 				ReleaseDate = new DateOnly(1998,7, 15),
 				Description = "Unforgettable adventure"
