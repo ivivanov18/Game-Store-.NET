@@ -1,7 +1,7 @@
 GET http://localhost:5073/games
 
 ###
-GET http://localhost:5073/games/c33f8bd1-8f59-47d6-9c66-3bdf119b46ad
+GET http://localhost:5073/games/F631F1F9-E2FA-4E62-9845-ACDAE671AF9B	
 
 ###
 POST http://localhost:5073/games
@@ -9,22 +9,22 @@ Content-Type: application/json
 
 {
 	"name": "Left 4 Dead",
-	"genreId": "f4d9a6a8-2a73-4f13-9e01-e52567507b00",
+	"genreId": "DC336069-A8CA-4305-8CC1-7E7DDE9D2355",
 	"price": "5.99",
 	"releaseDate": "2008-11-18",
 	"description": "Great shooter"
 }
 
 ###
-PUT http://localhost:5073/games/a893498d-2c71-40c9-81ce-37e3934499f6
+PUT http://localhost:5073/games/F631F1F9-E2FA-4E62-9845-ACDAE671AF9B
 Content-Type: application/json
 
 {
-	"name": "Street Fighter II Turbo",
-	"genreId" : "dd243b4a-71dc-4a0b-b11d-d67a55a8586d",
-	"price" : "19.99",
-	"releaseDate" : "1992-07-15",
-	"description": "Still one of the best on SNES"
+	"name": "Left 4 Dead",
+	"genreId": "DC336069-A8CA-4305-8CC1-7E7DDE9D2355",
+	"price": "99.99",
+	"releaseDate": "2008-11-18",
+	"description": "One of the best shooters"
 }
 
 ###
