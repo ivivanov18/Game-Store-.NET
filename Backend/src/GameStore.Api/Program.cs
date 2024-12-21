@@ -1,4 +1,5 @@
 using GameStore.Api.Data;
+using GameStore.Api.Exceptions;
 using GameStore.Api.Features.Games;
 using GameStore.Api.Features.Genres;
 
@@ -18,4 +19,5 @@ var app = builder.Build();
 app.MapGames();
 app.MapGenres();
 app.InitializeDb();
+app.AddCustomExceptionHandling();
 app.Run();
