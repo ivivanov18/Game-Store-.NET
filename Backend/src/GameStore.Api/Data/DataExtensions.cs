@@ -5,14 +5,14 @@ namespace GameStore.Api.Data;
 
 public static class DataExtensions
 {
-	private static void MigrateDb(this WebApplication app)
+	private static async Task MigrateDbAsync(this WebApplication app)
 	{
 		using var scope = app.Services.CreateScope();
 		GameStoreDbContext? context = scope.ServiceProvider.GetRequiredService<GameStoreDbContext>();
-		context.Database.Migrate();
+		await context.Database.MigrateAsync();
 	}
 
-	private static void SeedDb(this WebApplication app)
+	private static async Task SeedDbAsync(this WebApplication app)
 	{
 		using var scope = app.Services.CreateScope();
 		GameStoreDbContext? context = scope.ServiceProvider.GetRequiredService<GameStoreDbContext>();
@@ -27,13 +27,13 @@ public static class DataExtensions
 				new Genre {Name = "Sports"}
 			);
 
-			context.SaveChanges();
+			await context.SaveChangesAsync();
 		}
 	}
 
-	public static void InitializeDb(this WebApplication app)
+	public static async Task InitializeDbAsync(this WebApplication app)
 	{
-		app.MigrateDb();
-		app.SeedDb();
+		await app.MigrateDbAsync();
+		await app.SeedDbAsync();
 	}
 }

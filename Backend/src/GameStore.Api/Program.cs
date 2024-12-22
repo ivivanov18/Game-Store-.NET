@@ -18,6 +18,6 @@ var app = builder.Build();
 
 app.MapGames();
 app.MapGenres();
-app.InitializeDb();
+await app.InitializeDbAsync();
 app.AddCustomExceptionHandling();
 app.Run();
