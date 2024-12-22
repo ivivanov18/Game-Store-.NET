@@ -8,11 +8,11 @@ POST http://localhost:5073/games
 Content-Type: application/json
 
 {
-	"name": "Left 4 Dead",
-	"genreId": "DC336069-A8CA-4305-8CC1-7E7DDE9D2355",
-	"price": "5.99",
-	"releaseDate": "2008-11-18",
-	"description": "Great shooter"
+	"name": "Test",
+	"genreId": "A9C879B8-E948-4BB8-A825-E1A76405FF3A",
+	"price": "50.99",
+	"releaseDate": "1995-11-18",
+	"description": "One of the first games"
 }
 
 ###
@@ -28,7 +28,6 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:5073/games/a893498d-2c71-40c9-81ce-37e3934499f6
-
+DELETE http://localhost:5073/games/2c415c9a-1d26-46ac-ae0b-344a9ba18e0d
 ###
 GET http://localhost:5073/genres
