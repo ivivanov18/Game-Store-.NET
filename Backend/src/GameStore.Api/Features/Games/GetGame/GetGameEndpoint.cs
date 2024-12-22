@@ -9,9 +9,9 @@ public static class GetGameEndpoint
 	public static void MapGetGame(this IEndpointRouteBuilder app)
 	{
 		// GET /games/:id
-		app.MapGet("/{id}", (Guid id, GameStoreDbContext context) =>
+		app.MapGet("/{id}", async (Guid id, GameStoreDbContext context) =>
 		{
-			Game? game = context.Games.Find(id);
+			Game? game = await context.Games.FindAsync(id);
 
 			return game is null ? Results.NotFound() : Results.Ok(
 				new GameDetailDto(
@@ -26,5 +26,4 @@ public static class GetGameEndpoint
 		})
 		.WithName(EndpointNames.GetGame);
 	}
-
 }

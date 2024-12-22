@@ -8,8 +8,8 @@ public static class GetGamesEndpoint
 	public static void MagGetGames(this IEndpointRouteBuilder app)
 	{
 		// GET /games
-		app.MapGet("/", ( GameStoreDbContext context) => 
-			context.Games
+		app.MapGet("/", async ( GameStoreDbContext context) => 
+			await context.Games
 				.Include(game => game.Genre)
 				.Select(game => new GameSummaryDto(
 					game.Id,
@@ -18,6 +18,7 @@ public static class GetGamesEndpoint
 					game.Price,
 					game.ReleaseDate
 				))
-				.AsNoTracking());
+				.AsNoTracking()
+				.ToListAsync());
 	}
 }
