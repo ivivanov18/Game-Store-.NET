@@ -35,5 +35,7 @@ public static class DataExtensions
 	{
 		await app.MigrateDbAsync();
 		await app.SeedDbAsync();
+
+		app.Logger.LogInformation("Database is initialized");
 	}
 }

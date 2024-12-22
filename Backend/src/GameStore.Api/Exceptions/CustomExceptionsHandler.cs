@@ -12,6 +12,7 @@ public static class CustomExceptionsHandler
 			}
 			catch(BadHttpRequestException ex)
 			{
+				app.Logger.LogError(ex.Message);
 				context.Response.StatusCode = StatusCodes.Status400BadRequest;
 				await context.Response.WriteAsJsonAsync(new
 				{
@@ -21,6 +22,7 @@ public static class CustomExceptionsHandler
 			}
 			catch(Exception ex)
 			{
+				app.Logger.LogError(ex.Message);
 				context.Response.StatusCode = StatusCodes.Status500InternalServerError;
 				await context.Response.WriteAsJsonAsync(new
 				{
