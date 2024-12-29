@@ -1,8 +1,7 @@
 using GameStore.Api.Data;
-using GameStore.Api.Exceptions;
 using GameStore.Api.Features.Games;
 using GameStore.Api.Features.Genres;
-using GameStore.Api.Middlewares;
+using GameStore.Api.Shared.ExceptionHandling;
 using Microsoft.AspNetCore.HttpLogging;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,11 +24,20 @@ builder.Services.AddHttpLogging(options =>
 	options.CombineLogs = true;
 });
 
+builder.Services.AddProblemDetails()
+				.AddExceptionHandler<GlobalExceptionHandler>();
+
 var app = builder.Build();
 
 app.UseHttpLogging();
+
+if (!app.Environment.IsDevelopment())
+{
+	app.UseExceptionHandler();
+}
+
+app.UseStatusCodePages();
 app.MapGames();
 app.MapGenres();
 await app.InitializeDbAsync();
-app.AddCustomExceptionHandling();
 app.Run();
