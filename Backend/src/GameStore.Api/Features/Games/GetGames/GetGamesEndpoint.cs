@@ -12,7 +12,11 @@ public static class GetGamesEndpoint
 
 			var skipCount = (request.PageNumber - 1) * request.PageSize;
 
-			var gamesOnPage = await context.Games
+			var filteredGames = context.Games
+										.Where(game => string.IsNullOrWhiteSpace(request.Name) 
+													|| EF.Functions.Like(game.Name, $"%{request.Name}%"));
+
+			var gamesOnPage = await filteredGames
 						.OrderBy(game => game.Name)
 						.Skip(skipCount)
 						.Take(request.PageSize)
@@ -27,7 +31,7 @@ public static class GetGamesEndpoint
 						.AsNoTracking()
 						.ToListAsync();
 
-			var totalGames = await context.Games.CountAsync();
+			var totalGames = await filteredGames.CountAsync();
 			var totalPages = (int)Math.Ceiling(totalGames / (double)request.PageSize);
 
 			return new GamesPageDto(totalPages, gamesOnPage);
